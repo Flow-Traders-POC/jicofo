@@ -13,6 +13,9 @@ jobs:
   container:
    image: maven:3.9.9-amazoncorretto-21-debian
 
+
+   
+
   steps:
    - uses: actions/checkout@v4
    - name: Compile, test & report coverage
