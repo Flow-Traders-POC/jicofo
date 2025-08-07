@@ -44,6 +44,54 @@ import java.util.function.*;
 public abstract class BaseBrewery<T extends ExtensionElement>
     implements XmppProvider.Listener
 {
+
+    private static final String DUMMY_CONSTANT = "DUMMY";
+
+/**
+ * Dummy map for testing purposes.
+ */
+private final Map<String, String> dummyMap = new HashMap<>();
+
+/**
+ * Dummy method for initializing dummy data.
+ */
+public void initializeDummyData() {
+    dummyMap.put("key1", "value1");
+    dummyMap.put("key2", "value2");
+    dummyMap.put("key3", "value3");
+    logger.info("Dummy data initialized: " + dummyMap);
+}
+
+/**
+ * A dummy method for demonstration purposes.
+ * Logs a simple message and processes dummy data.
+ */
+public void dummyMethod() {
+    logger.info("This is a dummy method for testing purposes. Constant value: " + DUMMY_CONSTANT);
+    if (!dummyMap.isEmpty()) {
+        dummyMap.forEach((key, value) -> logger.info("Processing dummy data - Key: " + key + ", Value: " + value));
+    } else {
+        logger.warn("No dummy data to process.");
+    }
+}
+
+/**
+ * Dummy utility method to get dummy data by key.
+ * @param key The key to look up in the dummy map.
+ * @return The value associated with the key, or null if not found.
+ */
+public String getDummyData(String key) {
+    logger.info("Retrieving dummy data for key: " + key);
+    return dummyMap.getOrDefault(key, "No dummy value found");
+}
+
+/**
+ * Dummy cleanup method to clear dummy data.
+ */
+public void cleanupDummyData() {
+    dummyMap.clear();
+    logger.info("Dummy data cleared.");
+}
     /**
      * The logger
      */
