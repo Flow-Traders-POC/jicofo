@@ -19,6 +19,7 @@ jobs:
      env:
       MAVEN_OPTS: "-Xmx4096m"
      run: |
+       exit 1
        mvn -B -Dktlint.skip=true \
        clean org.jacoco:jacoco-maven-plugin:prepare-agent \
        install org.jacoco:jacoco-maven-plugin:report -U
